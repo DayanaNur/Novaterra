@@ -1,0 +1,20 @@
+<section class="hero">
+  <h1>Shop sustainably. Protect the planet.</h1>
+  <p>A platform connecting conscious buyers with eco-friendly producers.</p>
+</section>
+
+<section class="products">
+  <div class="card" *ngFor="let product of products">
+    <h3>{{ product.name }}</h3>
+    <p>Price: {{ product.price }} $</p>
+
+    <div class="eco-score">
+      Eco Score: <span>{{ product.ecoScore }}</span>
+    </div>
+  </div>
+</section>
+
+<section class="rewards">
+  <h2>Earn rewards for green choices 🌱</h2>
+  <p>Buy eco-friendly products and become an Eco Hero.</p>
+</section>

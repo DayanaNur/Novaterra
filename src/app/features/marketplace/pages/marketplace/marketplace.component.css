@@ -1,0 +1,30 @@
+.hero {
+  text-align: center;
+  padding: 48px;
+  background: #e8f5e9;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 32px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid #ddd;
+}
+
+.eco-score span {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.rewards {
+  text-align: center;
+  padding: 32px;
+  background: #f1f8e9;
+}
