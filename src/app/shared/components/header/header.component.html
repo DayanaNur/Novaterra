@@ -1,11 +1,39 @@
 <header class="header">
-  <div class="logo">Novaterra</div>
+  <div class="header-container">
 
-  <nav>
-    <a routerLink="/marketplace">Marketplace</a>
-    <a href="#">Eco Score</a>
-    <a href="#">Rewards</a>
-  </nav>
+    <div class="logo" routerLink="/">Novaterra</div>
 
-  <button class="login-btn">Login</button>
+    <nav class="nav">
+      <a routerLink="/marketplace"
+         routerLinkActive="active"
+         class="nav-link">
+        Marketplace
+      </a>
+
+      <a class="nav-link">Eco Score</a>
+      <a class="nav-link">Rewards</a>
+    </nav>
+
+    <div class="right-section">
+
+      <div class="actions">
+        <button class="login-btn" routerLink="/login">
+          Login
+        </button>
+
+        <button class="signup-btn" routerLink="/register">
+          Sign up
+        </button>
+      </div>
+
+      <a routerLink="/cart" class="cart-link">
+        🛒
+        <span class="cart-badge" *ngIf="cartCount > 0">
+          {{ cartCount }}
+        </span>
+      </a>
+
+    </div>
+
+  </div>
 </header>

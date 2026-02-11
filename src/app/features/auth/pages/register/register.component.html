@@ -1,0 +1,41 @@
+<div class="auth-page">
+  <form class="auth-card" (ngSubmit)="onRegister()">
+
+    <h2>Create account</h2>
+    <p class="subtitle">Join Novaterra today</p>
+
+    <input
+      type="text"
+      placeholder="Username"
+      [(ngModel)]="username"
+      name="username"
+      required
+    />
+
+    <input
+      type="email"
+      placeholder="Email"
+      [(ngModel)]="email"
+      name="email"
+      required
+    />
+
+    <input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+      name="password"
+      required
+    />
+
+    <button type="submit" class="primary-btn">
+      Sign up
+    </button>
+
+    <p class="switch">
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </p>
+
+  </form>
+</div>

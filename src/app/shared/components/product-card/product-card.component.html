@@ -1,0 +1,35 @@
+<div class="card" [routerLink]="['/product', product.id]">
+
+  <div class="image-wrapper">
+    <img
+      [src]="product.image"
+      [alt]="product.name"
+    />
+  </div>
+
+  <div class="eco-badge">
+  🌱 Eco {{ product.ecoScore }}
+</div>
+
+
+  <h3>{{ product.name }}</h3>
+  <p class="description">{{ product.description }}</p>
+
+  <div class="info">
+  <span class="rating">⭐ {{ product.rating }}</span>
+  <span class="price">$ {{ product.price }}</span>
+</div>
+
+<button
+  class="add-to-cart-btn"
+  (click)="addToCart(); $event.stopPropagation()"
+  [disabled]="isInCart()">
+
+  <span class="icon"></span>
+  {{ isInCart() ? 'Added' : 'Add to cart' }}
+
+</button>
+
+
+
+</div>

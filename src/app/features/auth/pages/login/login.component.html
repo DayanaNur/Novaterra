@@ -1,0 +1,29 @@
+<div class="login-page">
+  <form class="login-card" (ngSubmit)="onLogin()">
+
+    <h2>Welcome back</h2>
+    <p class="subtitle">Login to your Novaterra account</p>
+
+    <input
+      type="text"
+      placeholder="Username"
+      [(ngModel)]="username"
+      name="username"
+      required
+    />
+
+    <input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+      name="password"
+      required
+    />
+
+    <button type="submit" class="login-btn">
+      Login
+    </button>
+    
+
+  </form>
+</div>

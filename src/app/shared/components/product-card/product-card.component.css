@@ -1,0 +1,167 @@
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.eco-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #2d5016, #4caf50);
+  color: white;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+
+
+.title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.card .description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.rating {
+  font-size: 13px;
+  color: #f59e0b;
+  font-weight: 500;
+}
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d5016;
+}
+
+/* ACTIONS */
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-to-cart {
+  background: #2d5016;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background: #244112;
+}
+
+.view-product {
+  text-align: center;
+  font-size: 13px;
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.view-product:hover {
+  text-decoration: underline;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 16px;
+
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 220px;              /* ⬅ единая высота */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f4f7f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* 🔥 КЛЮЧЕВОЕ */
+}
+.add-to-cart-btn {
+  margin-top: 14px;
+  width: 100%;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background: linear-gradient(135deg, #2d5016, #4caf50);
+  color: #fff;
+
+  border: none;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  box-shadow: 0 6px 14px rgba(76, 175, 80, 0.25);
+}
+
+/* hover */
+.add-to-cart-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(76, 175, 80, 0.35);
+}
+
+/* active (нажатие) */
+.add-to-cart-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.25);
+}
+
+/* иконка */
+.add-to-cart-btn .icon {
+  font-size: 16px;
+}
+.card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 14px 0 6px;
+  color: #1f2937;
+}

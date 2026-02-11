@@ -1,0 +1,79 @@
+<section class="cart-page">
+  <h1>Your Cart</h1>
+
+  <ng-container *ngIf="(cartItems$ | async) as cartItems">
+
+    <div *ngIf="cartItems.length > 0; else emptyCart" class="cart-container">
+
+      <!-- LEFT -->
+      <div class="cart-items">
+
+        <div class="cart-item" *ngFor="let item of cartItems">
+
+          <img [src]="item.product.image" alt="{{item.product.name}}" />
+
+          <div class="item-info">
+            <h3>{{ item.product.name }}</h3>
+            <p class="price">${{ item.product.price }}</p>
+
+            <div class="quantity">
+              <button (click)="decrease(item)">−</button>
+              <span>{{ item.quantity }}</span>
+              <button (click)="increase(item)">+</button>
+            </div>
+          </div>
+
+          <div class="item-total">
+            ${{ item.product.price * item.quantity }}
+            <button class="remove" (click)="remove(item)">✕</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="cart-summary">
+        <h2>Order Summary</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>${{ getTotal() }}</span>
+        </div>
+
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span>Free</span>
+        </div>
+
+        <div class="summary-total">
+          <span>Total</span>
+          <span>${{ getTotal() }}</span>
+        </div>
+
+        <button class="checkout-btn">
+          Proceed to Checkout
+        </button>
+
+        <button class="clear-btn" (click)="clearCart()">
+          Clear Cart
+        </button>
+      </div>
+
+    </div>
+
+  </ng-container>
+
+  <ng-template #emptyCart>
+  <div class="empty-cart">
+    <h2>Your cart is empty 🛒</h2>
+
+    <button class="primary-btn" routerLink="/marketplace">
+      Go Shopping
+    </button>
+
+  </div>
+</ng-template>
+
+
+</section>

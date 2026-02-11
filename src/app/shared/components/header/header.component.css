@@ -1,28 +1,137 @@
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  border-bottom: 1px solid #f1f1f1;
+  backdrop-filter: blur(10px);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 16px 32px;
-  background: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+  justify-content: space-between;
 }
 
+/* LOGO */
 .logo {
-  font-weight: bold;
-  font-size: 20px;
-  color: #2e7d32;
+  font-size: 22px;
+  font-weight: 700;
+  color: #2d5016;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s ease;
 }
 
-nav a {
-  margin: 0 12px;
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* NAVIGATION */
+.nav {
+  display: flex;
+  gap: 36px;
+  position: relative;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #2e2e2e;
   text-decoration: none;
-  color: #333;
+  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link:hover {
+  color: #2d5016;
+}
+
+.nav-link.active {
+  color: #2d5016;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #2d5016;
+  border-radius: 2px;
+}
+
+/* RIGHT SECTION */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .login-btn {
-  background: #2e7d32;
-  color: white;
+  background: transparent;
   border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #444;
+  transition: color 0.2s ease;
+}
+
+.login-btn:hover {
+  color: #2d5016;
+}
+
+.signup-btn {
+  background: #2d5016;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.signup-btn:hover {
+  background: #1f3a10;
+  transform: translateY(-1px);
+}
+
+/* CART */
+.cart-link {
+  position: relative;
+  font-size: 20px;
+  text-decoration: none;
+  color: #2e2e2e;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cart-link:hover {
+  color: #2d5016;
+  transform: translateY(-2px);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #2d5016;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 999px;
 }

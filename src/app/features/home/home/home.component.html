@@ -1,0 +1,54 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1>Shop sustainable. Live better.</h1>
+    <p>
+      Discover eco-friendly products that reduce waste and protect the planet.
+    </p>
+
+    <div class="hero-buttons">
+  <a routerLink="/marketplace" class="btn-primary">
+    Explore Marketplace
+  </a>
+
+  <a routerLink="/register" class="btn-secondary">
+    Join Now
+  </a>
+</div>
+
+  </div>
+
+  <div class="hero-image">
+    <img src="assets/products/hero.jpeg" alt="Eco products">
+  </div>
+</section>
+
+
+<section class="featured">
+  <h2>Featured eco-friendly products</h2>
+
+  <div class="products-grid">
+    <app-product-card
+      *ngFor="let product of products"
+      [product]="product">
+    </app-product-card>
+  </div>
+</section>
+
+
+<!-- VALUES -->
+<section class="values">
+  <div class="value-card">
+    <h3>🌱 Sustainable</h3>
+    <p>Products selected with environmental impact in mind</p>
+  </div>
+
+  <div class="value-card">
+    <h3>📊 Transparent</h3>
+    <p>Clear eco scores based on sustainability criteria</p>
+  </div>
+
+  <div class="value-card">
+    <h3>🎁 Rewarding</h3>
+    <p>Earn rewards for making eco-friendly choices</p>
+  </div>
+</section>

@@ -1,20 +1,45 @@
-<section class="hero">
-  <h1>Shop sustainably. Protect the planet.</h1>
-  <p>A platform connecting conscious buyers with eco-friendly producers.</p>
-</section>
+<section class="marketplace">
+  <h1>Eco Marketplace</h1>
 
-<section class="products">
-  <div class="card" *ngFor="let product of products">
-    <h3>{{ product.name }}</h3>
-    <p>Price: {{ product.price }} $</p>
+  <!-- SEARCH PANEL -->
+  <div class="search-panel">
 
-    <div class="eco-score">
-      Eco Score: <span>{{ product.ecoScore }}</span>
+    <div class="search-input">
+      <span class="icon">🔍</span>
+      <input
+        type="text"
+        placeholder="Search eco-friendly products..."
+        [(ngModel)]="searchTerm"
+      />
     </div>
-  </div>
-</section>
 
-<section class="rewards">
-  <h2>Earn rewards for green choices 🌱</h2>
-  <p>Buy eco-friendly products and become an Eco Hero.</p>
+    <div class="eco-select">
+      <select [(ngModel)]="selectedCategory">
+        <option value="">All categories</option>
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </option>
+      </select>
+      <span class="arrow">▾</span>
+    </div>
+
+    <div class="eco-select">
+      <select [(ngModel)]="minEcoScore">
+        <option [ngValue]="0">Any eco score</option>
+        <option [ngValue]="70">Eco 70+</option>
+        <option [ngValue]="80">Eco 80+</option>
+        <option [ngValue]="90">Eco 90+</option>
+      </select>
+      <span class="arrow">▾</span>
+    </div>
+
+  </div> <!-- ⬅⬅⬅ ВОТ ЭТОГО DIV НЕ ХВАТАЛО -->
+
+  <!-- PRODUCTS -->
+  <div class="products-grid">
+    <app-product-card
+      *ngFor="let product of filteredProducts"
+      [product]="product">
+    </app-product-card>
+  </div>
 </section>

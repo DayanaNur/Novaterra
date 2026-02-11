@@ -1,0 +1,62 @@
+.footer {
+  background: #1c1c1c;
+  color: #cccccc;
+  margin-top: 80px;
+}
+
+.footer-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+}
+
+/* Brand */
+.footer-brand .logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4caf50;
+  margin-bottom: 12px;
+}
+
+.tagline {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #aaaaaa;
+}
+
+/* Links */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.links-column h4 {
+  font-size: 14px;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.links-column a {
+  display: block;
+  font-size: 14px;
+  color: #cccccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.links-column a:hover {
+  color: #4caf50;
+}
+
+/* Bottom */
+.footer-bottom {
+  border-top: 1px solid #2a2a2a;
+  padding: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: #888888;
+}

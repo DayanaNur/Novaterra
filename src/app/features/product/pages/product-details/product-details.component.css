@@ -1,0 +1,118 @@
+.product-layout {
+  max-width: 1100px;
+  margin: 40px auto 100px;
+  padding: 0 20px;
+}
+
+.back-link {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.product-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+/* IMAGE */
+.image-box {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+}
+
+.image-box img {
+  width: 100%;
+  height: 420px;
+  object-fit: contain;
+}
+
+/* INFO */
+.info-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.eco-badge {
+  background: #4caf50;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 999px;
+  width: fit-content;
+  font-size: 13px;
+}
+
+.eco-hint {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 6px 0 18px;
+}
+
+.info-box h1 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.rating {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 30px;
+  font-weight: 700;
+  color: #2d5016;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #e5e7eb,
+    transparent
+  );
+  margin: 24px 0;
+}
+
+.description {
+  font-size: 15px;
+  color: #555;
+}
+
+
+
+/* BUTTON */
+.add-to-cart {
+  background: linear-gradient(135deg, #2d5016, #4caf50);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  box-shadow: 0 12px 30px rgba(76, 175, 80, 0.35);
+}
+
+.add-to-cart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(76, 175, 80, 0.45);
+}
+
+.cta-hint {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 10px;
+}
+.benefits {
+  margin-top: 20px;
+  line-height: 1.8;
+  color: #555;
+}

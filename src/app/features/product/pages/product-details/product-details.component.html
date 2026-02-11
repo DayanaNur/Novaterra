@@ -1,0 +1,66 @@
+<section class="product-layout">
+
+  <a routerLink="/marketplace" class="back-link">
+    ← Back to marketplace
+  </a>
+
+  <div class="product-grid">
+
+    <!-- LEFT: IMAGE -->
+    <div class="image-box">
+      <img
+        [src]="product.image"
+        [alt]="product.name"
+      />
+    </div>
+
+    <!-- RIGHT: INFO -->
+    <div class="info-box">
+
+      <span class="eco-badge">
+        🌱 Eco {{ product.ecoScore }}
+      </span>
+      <p class="eco-hint">
+        High sustainability score
+      </p>
+
+      <h1>{{ product.name }}</h1>
+
+      <div class="rating">
+        ⭐ {{ product.rating }} · {{ product.category }}
+      </div>
+
+      <div class="price">
+        ${{ product.price }}
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="description">
+        {{ product.description }}
+      </p>
+
+      <!-- FEATURES -->
+      <ul class="benefits">
+        <li>♻️ Sustainable materials</li>
+        <li>🌱 Low carbon footprint</li>
+        <li>🌍 Ethical production</li>
+</ul>
+
+      <button
+  class="add-to-cart"
+  (click)="addToCart()"
+  [disabled]="isInCart()">
+
+  {{ isInCart() ? 'Added' : '🛒 Add to cart · Eco choice' }}
+
+</button>
+
+
+      <p class="cta-hint">
+        🌿 Sustainable choice for everyday use
+      </p>
+
+    </div>
+  </div>
+</section>
