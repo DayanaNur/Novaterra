@@ -1,0 +1,154 @@
+.profile-wrapper {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* HERO */
+.profile-hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(135deg, #e8f5e9, #f1f8f4);
+  padding: 40px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.avatar-large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2d5016, #4caf50);
+  color: white;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.hero-info h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.hero-info p {
+  margin: 5px 0 15px;
+  color: #666;
+}
+
+.eco-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #c8e6c9;
+  border-radius: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Progress */
+.progress-block {
+  width: 300px;
+}
+
+.progress-label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2d5016, #4caf50);
+  transition: width 0.4s ease;
+}
+
+/* STATS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.stat-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.stat-title {
+  color: #777;
+  font-size: 14px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #2d5016;
+}
+
+.stat-desc {
+  font-size: 13px;
+  color: #999;
+}
+
+/* Achievements */
+.achievements h2 {
+  margin-bottom: 20px;
+}
+
+.badges {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: #f1f8f4;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* Logout */
+.logout-btn {
+  margin-top: 40px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  background: #e53935;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #c62828;
+}

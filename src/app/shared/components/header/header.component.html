@@ -1,8 +1,12 @@
 <header class="header">
   <div class="header-container">
 
-    <div class="logo" routerLink="/">Novaterra</div>
+    <!-- LOGO -->
+    <div class="logo" routerLink="/">
+      Novaterra
+    </div>
 
+    <!-- NAVIGATION -->
     <nav class="nav">
       <a routerLink="/marketplace"
          routerLinkActive="active"
@@ -10,30 +14,80 @@
         Marketplace
       </a>
 
-      <a class="nav-link">Eco Score</a>
-      <a class="nav-link">Rewards</a>
+      <a routerLink="/eco-score"
+         routerLinkActive="active"
+         class="nav-link">
+        Eco Score
+      </a>
+
+      <a class="nav-link">
+        Rewards
+      </a>
     </nav>
 
     <div class="right-section">
 
-      <div class="actions">
-        <button class="login-btn" routerLink="/login">
+      <!-- USER MENU -->
+      <div class="user-menu" *ngIf="user">
+
+        <div class="user-chip"
+             (click)="toggleMenu($event)">
+
+          <div class="avatar">
+            {{ user.name.charAt(0) }}
+          </div>
+
+          <span class="user-name">
+            {{ user.name }}
+          </span>
+
+          <span class="arrow"
+                [class.rotate]="isMenuOpen">
+            ▾
+          </span>
+        </div>
+
+        <div class="dropdown"
+             *ngIf="isMenuOpen">
+
+          <a routerLink="/profile" (click)="closeMenu()">Profile</a>
+
+
+          <a routerLink="/eco-score"
+             (click)="closeMenu()">
+            My Eco Score
+          </a>
+
+          <button (click)="logout($event)">
+            Logout
+          </button>
+
+        </div>
+      </div>
+
+      <!-- AUTH BUTTONS -->
+      <div class="actions" *ngIf="!user">
+        <button class="login-btn"
+                routerLink="/login">
           Login
         </button>
 
-        <button class="signup-btn" routerLink="/register">
+        <button class="signup-btn"
+                routerLink="/register">
           Sign up
         </button>
       </div>
 
-      <a routerLink="/cart" class="cart-link">
+      <!-- CART -->
+      <a routerLink="/cart"
+         class="cart-link">
         🛒
-        <span class="cart-badge" *ngIf="cartCount > 0">
+        <span class="cart-badge"
+              *ngIf="cartCount > 0">
           {{ cartCount }}
         </span>
       </a>
 
     </div>
-
   </div>
 </header>

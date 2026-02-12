@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 export interface User {
-  username: string;
+  id: number;
+  name: string;
+  email: string;
 }
 
 @Injectable({
@@ -10,28 +12,40 @@ export interface User {
 })
 export class AuthService {
 
-  private userSubject = new BehaviorSubject<User | null>(null);
+  private userSubject = new BehaviorSubject<User | null>(this.getStoredUser());
   user$ = this.userSubject.asObservable();
 
-  constructor() {
-    // если пользователь был сохранён
-    const savedUser = localStorage.getItem('user');
-    if (savedUser) {
-      this.userSubject.next(JSON.parse(savedUser));
+  login(email: string, password: string): boolean {
+
+    if (email && password) {
+
+      const user: User = {
+        id: 1,
+        name: 'Dayana',
+        email
+      };
+
+      localStorage.setItem('user', JSON.stringify(user));
+      this.userSubject.next(user);
+
+      return true;
     }
+
+    return false;
   }
 
-  login(username: string, password: string) {
-    // ⛔️ пока без бэкенда
-    const user: User = { username };
-
-    this.userSubject.next(user);
-    localStorage.setItem('user', JSON.stringify(user));
-  }
-
-  logout() {
-    this.userSubject.next(null);
+  logout(): void {
     localStorage.removeItem('user');
+    this.userSubject.next(null);
+  }
+
+  private getStoredUser(): User | null {
+    const stored = localStorage.getItem('user');
+    return stored ? JSON.parse(stored) : null;
+  }
+
+  getUser(): User | null {
+    return this.userSubject.value;
   }
 
   isLoggedIn(): boolean {

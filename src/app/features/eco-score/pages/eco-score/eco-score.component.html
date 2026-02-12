@@ -1,0 +1,52 @@
+<section class="eco-page">
+
+  <!-- HERO -->
+  <div class="eco-hero">
+    <h1>Eco Score System</h1>
+    <p>
+      Every product on Novaterra is evaluated using measurable
+      sustainability criteria.
+    </p>
+  </div>
+
+  <!-- CRITERIA -->
+  <div class="eco-criteria">
+    <div class="criteria-card" *ngFor="let item of criteria">
+      <div class="icon">{{ item.icon }}</div>
+      <h3>{{ item.title }}</h3>
+      <p>Weight: {{ item.weight }}%</p>
+
+      <div class="progress-bar">
+        <div 
+          class="progress-fill"
+          [style.width.%]="item.value"
+          [style.background]="getScoreColor(item.value)">
+        </div>
+      </div>
+
+      <span class="value">{{ item.value }}/100</span>
+    </div>
+  </div>
+
+  <!-- EXAMPLE -->
+  <div class="eco-example">
+    <h2>Example: Reusable Water Bottle</h2>
+
+    <div class="score-circle"
+         [style.borderColor]="getScoreColor(exampleScore)">
+      <span>{{ exampleScore }}</span>
+    </div>
+
+    <p class="score-label">
+      High sustainability rating
+    </p>
+  </div>
+
+  <!-- CTA -->
+  <div class="eco-cta">
+    <button routerLink="/marketplace" class="primary-btn">
+      Explore Sustainable Products
+    </button>
+  </div>
+
+</section>

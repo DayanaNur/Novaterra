@@ -1,29 +1,35 @@
 <div class="login-page">
-  <form class="login-card" (ngSubmit)="onLogin()">
+  <div class="login-card">
 
-    <h2>Welcome back</h2>
-    <p class="subtitle">Login to your Novaterra account</p>
+    <h1>Welcome back</h1>
 
-    <input
-      type="text"
-      placeholder="Username"
-      [(ngModel)]="username"
-      name="username"
-      required
-    />
+    <form (ngSubmit)="onSubmit()">
 
-    <input
-      type="password"
-      placeholder="Password"
-      [(ngModel)]="password"
-      name="password"
-      required
-    />
+      <input
+        type="email"
+        placeholder="Email"
+        [(ngModel)]="email"
+        name="email"
+        required
+      />
 
-    <button type="submit" class="login-btn">
-      Login
-    </button>
-    
+      <input
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
 
-  </form>
+      <button type="submit">
+        Login
+      </button>
+
+      <p class="error" *ngIf="error">
+        {{ error }}
+      </p>
+
+    </form>
+
+  </div>
 </div>

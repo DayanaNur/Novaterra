@@ -1,11 +1,11 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: white;
-  border-bottom: 1px solid #f1f1f1;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.85);
+  z-index: 1000;
 }
+
 
 .header-container {
   max-width: 1200px;
@@ -134,4 +134,103 @@
   font-weight: 600;
   padding: 2px 6px;
   border-radius: 999px;
+}
+/* USER MENU */
+.user-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Chip */
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #f5f7f5;
+  transition: 0.2s ease;
+}
+
+.user-chip:hover {
+  background: #e9f2ea;
+}
+
+/* Avatar circle */
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2d5016, #4caf50);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user-name {
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+.arrow {
+  font-size: 12px;
+  color: #666;
+}
+.arrow {
+  transition: 0.2s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  width: 180px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.2s ease;
+}
+
+.dropdown a,
+.dropdown button {
+  padding: 10px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #2e2e2e;
+  text-decoration: none;
+}
+
+.dropdown a:hover,
+.dropdown button:hover {
+  background: #f3f7f3;
+}
+
+.dropdown button {
+  color: #c62828;
+}
+
+/* animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

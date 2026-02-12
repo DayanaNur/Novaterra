@@ -1,1 +1,75 @@
-<p>profile works!</p>
+<div class="profile-wrapper" *ngIf="user">
+
+  <!-- HERO SECTION -->
+  <div class="profile-hero">
+    <div class="avatar-large">
+      {{ user.name.charAt(0) }}
+    </div>
+
+    <div class="hero-info">
+      <h1>{{ user.name }}</h1>
+      <p>{{ user.email }}</p>
+
+      <div class="eco-badge">
+        {{ getEcoLevel() }}
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-block">
+        <div class="progress-label">
+          Next level progress
+        </div>
+
+        <div class="progress-bar">
+          <div
+            class="progress-fill"
+            [style.width.%]="getProgress()">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <div class="stat-icon">🌿</div>
+      <div class="stat-title">Eco Points</div>
+      <div class="stat-value">{{ ecoPoints }}</div>
+      <div class="stat-desc">Total earned</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">🌍</div>
+      <div class="stat-title">CO₂ Saved</div>
+      <div class="stat-value">{{ co2Saved }} kg</div>
+      <div class="stat-desc">Environmental impact</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">🛒</div>
+      <div class="stat-title">Purchases</div>
+      <div class="stat-value">{{ purchases }}</div>
+      <div class="stat-desc">Completed orders</div>
+    </div>
+
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="achievements">
+    <h2>Your Achievements</h2>
+
+    <div class="badges">
+      <div class="badge">🌱 First Eco Purchase</div>
+      <div class="badge">♻️ Plastic Saver</div>
+      <div class="badge">🌳 Tree Supporter</div>
+    </div>
+  </div>
+
+  <!-- LOGOUT -->
+  <button class="logout-btn" (click)="logout()">
+    Logout
+  </button>
+
+</div>
